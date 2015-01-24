@@ -1,4 +1,5 @@
 IMAGE_NAME := tinycore
+IMAGE_TAG := 6.0-x86
 TMP_IMAGE_NAME := $(IMAGE_NAME)-tar-builder
 TMP_CONTAINER_NAME := $(IMAGE_NAME)-tar-exporter
 
@@ -6,14 +7,15 @@ TMP_CONTAINER_NAME := $(IMAGE_NAME)-tar-exporter
 
 all: build
 
-build: rootfs64.tar.gz
-	docker build -t $(IMAGE_NAME) .
+build: rootfs.tar.gz
+	docker build -t $(IMAGE_NAME):$(IMAGE_TAG) .
+	docker tag $(IMAGE_NAME):$(IMAGE_TAG) $(IMAGE_NAME):latest
 
-rootfs64.tar.gz: squashfs-tools.tar.gz
+rootfs.tar.gz: squashfs-tools.tar.gz
 	docker build -t $(TMP_IMAGE_NAME) src
 	docker run --name $(TMP_CONTAINER_NAME) $(TMP_IMAGE_NAME)
 	docker wait $(TMP_CONTAINER_NAME)
-	docker cp $(TMP_CONTAINER_NAME):/tmp/rootfs64.tar.gz ./
+	docker cp $(TMP_CONTAINER_NAME):/tmp/rootfs.tar.gz ./
 	docker rm $(TMP_CONTAINER_NAME)
 	docker rmi $(TMP_IMAGE_NAME)
 
@@ -28,5 +30,6 @@ squashfs-tools.tar.gz:
 clean:
 	docker ps | grep -q $(TMP_CONTAINER_NAME) && docker stop $(TMP_CONTAINER_NAME) || true
 	docker ps -a | grep -q $(TMP_CONTAINER_NAME) && docker rm $(TMP_CONTAINER_NAME) || true
-	docker images | grep -q $(IMAGE_NAME) && docker rmi $(IMAGE_NAME) || true
+	docker images $(IMAGE_NAME) | grep -q $(IMAGE_TAG) && docker rmi $(IMAGE_NAME):$(IMAGE_TAG) || true
+	docker images $(IMAGE_NAME) | grep -q latest && docker rmi $(IMAGE_NAME):latest || true
 	docker images | grep -q $(TMP_IMAGE_NAME) && docker rmi $(TMP_IMAGE_NAME) || true

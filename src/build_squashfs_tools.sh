@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ ! -f squashfs-tools.tcz ]; then
-    wget http://tinycorelinux.net/6.x/x86_64/tcz/squashfs-tools.tcz
+    wget http://tinycorelinux.net/6.x/x86/tcz/squashfs-tools.tcz
 fi
 
 mount -t squashfs -o loop,ro,bs=4096 squashfs-tools.tcz /mnt

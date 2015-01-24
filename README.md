@@ -3,13 +3,13 @@ Tiny Core Linux Docker Image Builder
 
 Dockerfile and helper scripts for building a very small CLI system image based
 on Tiny Core Linux developed at [The Core Project](http://tinycorelinux.net).
-It builds Core 6.0 x86\_64 image by using following packages which were
+It builds Core 6.0 x86 image by using following packages which were
 converted those archive type from The Core Project packages.
 
-- rootfs64.tar.gz: contains base system binaries and a file system layout
+- rootfs.tar.gz: contains base system binaries and a file system layout
 - squashfs-tools.tar.gz: contains a squashfs builder and expander
 
-Those original packages are found under http://tinycorelinux.net/6.x/x86_64
+Those original packages are found under http://tinycorelinux.net/6.x/x86
 
 ## Installation
 
@@ -55,6 +55,6 @@ instead of installing them by those tools directly.
 
 ## License
 
-This builder scripts except rootfs64.tar.gz and squashfs-tools.tar.gz binaries
+This builder scripts except rootfs.tar.gz and squashfs-tools.tar.gz binaries
 are under MIT License. See the [LICENSE](./LICENSE) file for details. The
 binaries are under [GPLv2](http://www.gnu.org/licenses/gpl-2.0.html)

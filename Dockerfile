@@ -1,5 +1,5 @@
 FROM scratch
-ADD rootfs64.tar.gz /
+ADD rootfs.tar.gz /
 ADD squashfs-tools.tar.gz /
 
 RUN mkdir -p /tmp/tce/optional \

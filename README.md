@@ -55,9 +55,10 @@ sudo -u tc tce-ab
 
 ## Building an image based on this image
 
-Now Docker doesn't support privilege mode at image building so please use
-`unsquashfs` command to expand package files downloaded by `tce-load` etc.
-instead of installing them by those tools directly.
+Now Docker doesn't support privilege mode at image building but this image
+includes patched `tce-load` which works without privilege mode by using
+`unsquashfs` internally instead of mounting squashfs on a loop back devise so
+to install packages, please use `tce-load` with `-c` option
 
 ## License
 

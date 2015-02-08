@@ -34,14 +34,20 @@ Just run
 docker run -it tatsushid/tinycore
 ```
 
-To install tcz packages into the container and use them, please run it with
-privilege mode like following
+To install tcz packages into the container and use them, please run `tce-load`
+command in it like following
+
+```bash
+sudo -u tc tce-load -wic bash.tcz
+```
+
+or run the container with privilege mode like following
 
 ```bash
 docker run -it --privileged tatsushid/tinycore
 ```
 
-Once it starts, you can run the package manager like
+Once it starts with privilege mode, you can run the package manager like
 
 ```bash
 sudo -u tc tce-ab

@@ -1,0 +1,18 @@
+--- tce-load.orig
++++ tce-load
+@@ -101,13 +101,13 @@
+ 
+ copyInstall() {
+ 	[ -d /mnt/test ] || sudo /bin/mkdir -p /mnt/test
+-	sudo /bin/mount $1 /mnt/test -t squashfs -o loop,ro,bs=4096
++	sudo /usr/local/bin/unsquashfs -f -d /mnt/test $1
+ 	if [ "$?" == 0 ]; then
+ 		if [ "$(ls -A /mnt/test)" ]; then
+ 			yes "$FORCE" | sudo /bin/cp -ai /mnt/test/. / 2>/dev/null
+ 			[ -n "`find /mnt/test/ -type d -name modules`" ] && MODULES=TRUE
+ 		fi
+-		sudo /bin/umount -d /mnt/test
++		sudo rm -rf /mnt/test
+ 	fi
+ }
+ 

@@ -13,9 +13,9 @@ These original packages are found under http://tinycorelinux.net/6.x/ and
 Dockerfile of these images are found at
 
 - 6.0-x86:
-  [Dockerfile](https://github.com/tatsushid/docker-tinycore/blob/master/x86/Dockerfile)
+  [x86/Dockerfile](https://github.com/tatsushid/docker-tinycore/blob/master/x86/Dockerfile)
 - 6.0-x86\_64:
-  [Dockerfile](https://github.com/tatsushid/docker-tinycore/blob/master/x86_64/Dockerfile)
+  [x86\_64/Dockerfile](https://github.com/tatsushid/docker-tinycore/blob/master/x86_64/Dockerfile)
 
 ## Installation
 

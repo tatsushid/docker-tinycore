@@ -76,6 +76,6 @@ to install packages, please use `tce-load` with `-c` option
 
 This builder scripts except rootfs.tar.gz and squashfs-tools.tar.gz binaries
 are under MIT License. See the
-[LICENSE](https://github.com/tatsushid/docker-tinycore/LICENSE) file for
-details. The binaries are under
+[LICENSE](https://github.com/tatsushid/docker-tinycore/blob/master/LICENSE)
+file for details. The binaries are under
 [GPLv2](http://www.gnu.org/licenses/gpl-2.0.html)

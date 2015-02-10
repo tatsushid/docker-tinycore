@@ -24,3 +24,9 @@ To clean up the directory, run
 ```bash
 make clean
 ```
+
+## License
+
+rootfs64.tar.gz, squashfs-tools.tar.gz and tce-load.patch are under
+[GPLv2](http://www.gnu.org/licenses/gpl-2.0.html). The other build scripts are
+under [MIT](LICENSE).

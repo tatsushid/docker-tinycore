@@ -8,4 +8,5 @@ RUN mkdir -p /tmp/tce/optional \
     && $(cd etc/sysconfig; ln -s ../../tmp/tce tcedir) \
     && echo -n > etc/sysconfig/tcuser
 
+USER tc
 CMD ["/bin/sh"]

@@ -10,11 +10,11 @@ all: build
 build: rootfs64.tar.gz
 	docker build -t $(IMAGE_NAME):$(IMAGE_TAG) .
 
-rootfs.tar.gz: squashfs-tools.tar.gz
+rootfs64.tar.gz: squashfs-tools.tar.gz
 	docker build -t $(TMP_IMAGE_NAME) src
 	docker run --name $(TMP_CONTAINER_NAME) $(TMP_IMAGE_NAME)
 	docker wait $(TMP_CONTAINER_NAME)
-	docker cp $(TMP_CONTAINER_NAME):/tmp/rootfs.tar.gz ./
+	docker cp $(TMP_CONTAINER_NAME):/tmp/rootfs64.tar.gz ./
 	docker rm $(TMP_CONTAINER_NAME)
 	docker rmi $(TMP_IMAGE_NAME)
 

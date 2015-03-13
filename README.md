@@ -75,3 +75,8 @@ Now Docker doesn't support privilege mode at image building but this image
 includes patched `tce-load` which works without privilege mode by using
 `unsquashfs` internally instead of mounting squashfs on a loop back device so
 to install packages, please use `tce-load` with `-c` option
+
+If you need an example, please see my
+[tinycore-ruby](https://github.com/tatsushid/docker-tinycore-ruby) or
+[tinycore-python](https://github.com/tatsushid/docker-tinycore-python)
+Dockerfile

@@ -1,7 +1,7 @@
 FROM busybox
 
 ADD tce-load.patch /tmp/
-RUN wget http://www.tinycorelinux.net/6.x/x86_64/release_candidates/distribution_files/rootfs64.gz \
+RUN wget http://www.tinycorelinux.net/6.x/x86_64/release/distribution_files/rootfs64.gz \
     && mkdir rootfs64 \
     && cd rootfs64 \
     && gzip -dc ../rootfs64.gz | cpio -id \

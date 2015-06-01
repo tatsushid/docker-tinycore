@@ -12,22 +12,14 @@ x86/x86\_64 packages
 These original packages are found under http://tinycorelinux.net/6.x/ and
 Dockerfile of these images are found at
 
-- 6.3-x86:
-  [x86/Dockerfile](https://github.com/tatsushid/docker-tinycore/blob/master/6.3/x86/Dockerfile)
-- 6.3-x86\_64:
-  [x86\_64/Dockerfile](https://github.com/tatsushid/docker-tinycore/blob/master/6.3/x86_64/Dockerfile)
-- 6.2-x86:
-  [x86/Dockerfile](https://github.com/tatsushid/docker-tinycore/blob/master/6.2/x86/Dockerfile)
-- 6.2-x86\_64:
-  [x86\_64/Dockerfile](https://github.com/tatsushid/docker-tinycore/blob/master/6.2/x86_64/Dockerfile)
-- 6.1-x86:
-  [x86/Dockerfile](https://github.com/tatsushid/docker-tinycore/blob/master/6.1/x86/Dockerfile)
-- 6.1-x86\_64:
-  [x86\_64/Dockerfile](https://github.com/tatsushid/docker-tinycore/blob/master/6.1/x86_64/Dockerfile)
-- 6.0-x86:
-  [x86/Dockerfile](https://github.com/tatsushid/docker-tinycore/blob/master/6.0/x86/Dockerfile)
-- 6.0-x86\_64:
-  [x86\_64/Dockerfile](https://github.com/tatsushid/docker-tinycore/blob/master/6.0/x86_64/Dockerfile)
+- [`6.3-x86` (x86/Dockerfile)](https://github.com/tatsushid/docker-tinycore/blob/master/6.3/x86/Dockerfile)
+- [`6.3-x86_64` (x86\_64/Dockerfile)](https://github.com/tatsushid/docker-tinycore/blob/master/6.3/x86_64/Dockerfile)
+- [`6.2-x86` (x86/Dockerfile)](https://github.com/tatsushid/docker-tinycore/blob/master/6.2/x86/Dockerfile)
+- [`6.2-x86_64` (x86\_64/Dockerfile)](https://github.com/tatsushid/docker-tinycore/blob/master/6.2/x86_64/Dockerfile)
+- [`6.1-x86` (x86/Dockerfile)](https://github.com/tatsushid/docker-tinycore/blob/master/6.1/x86/Dockerfile)
+- [`6.1-x86_64` (x86\_64/Dockerfile)](https://github.com/tatsushid/docker-tinycore/blob/master/6.1/x86_64/Dockerfile)
+- [`6.0-x86` (x86/Dockerfile)](https://github.com/tatsushid/docker-tinycore/blob/master/6.0/x86/Dockerfile)
+- [`6.0-x86_64` (x86\_64/Dockerfile)](https://github.com/tatsushid/docker-tinycore/blob/master/6.0/x86_64/Dockerfile)
 
 ## Installation
 

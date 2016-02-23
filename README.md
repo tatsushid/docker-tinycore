@@ -12,8 +12,10 @@ x86/x86\_64 packages
 These original packages are found under http://tinycorelinux.net/6.x/ and
 Dockerfile of these images are found at
 
+- [`7.0-x86`, `latest` (7.0/x86/Dockerfile)](https://github.com/tatsushid/docker-tinycore/blob/master/7.0/x86/Dockerfile)
+- [`7.0-x86_64` (7.0/x86\_64/Dockerfile)](https://github.com/tatsushid/docker-tinycore/blob/master/7.0/x86_64/Dockerfile)
 - [`6.4-x86` (6.4/x86/Dockerfile)](https://github.com/tatsushid/docker-tinycore/blob/master/6.4/x86/Dockerfile)
-- [`6.4-x86_64`, `latest` (6.4/x86\_64/Dockerfile)](https://github.com/tatsushid/docker-tinycore/blob/master/6.4/x86_64/Dockerfile)
+- [`6.4-x86_64` (6.4/x86\_64/Dockerfile)](https://github.com/tatsushid/docker-tinycore/blob/master/6.4/x86_64/Dockerfile)
 - [`6.3-x86` (6.3/x86/Dockerfile)](https://github.com/tatsushid/docker-tinycore/blob/master/6.3/x86/Dockerfile)
 - [`6.3-x86_64` (6.3/x86\_64/Dockerfile)](https://github.com/tatsushid/docker-tinycore/blob/master/6.3/x86_64/Dockerfile)
 - [`6.2-x86` (6.2/x86/Dockerfile)](https://github.com/tatsushid/docker-tinycore/blob/master/6.2/x86/Dockerfile)
@@ -29,13 +31,13 @@ The easiest way to install the image is pulling it from
 [Docker Hub repositories](https://registry.hub.docker.com/) like following
 
 ```bash
-docker pull tatsushid/tinycore:6.4-x86
+docker pull tatsushid/tinycore:7.0-x86
 ```
 
 or
 
 ```bash
-docker pull tatsushid/tinycore:6.4-x86_64
+docker pull tatsushid/tinycore:7.0-x86_64
 ```
 
 ## Usage
@@ -43,13 +45,13 @@ docker pull tatsushid/tinycore:6.4-x86_64
 Just run
 
 ```bash
-docker run -it tatsushid/tinycore:6.4-x86
+docker run -it tatsushid/tinycore:7.0-x86
 ```
 
 or
 
 ```bash
-docker run -it tatsushid/tinycore:6.4-x86_64
+docker run -it tatsushid/tinycore:7.0-x86_64
 ```
 
 To install tcz packages into the container and use them, please run `tce-load`
@@ -62,7 +64,7 @@ tce-load -wic bash.tcz
 or run the container with privilege mode like following
 
 ```bash
-docker run -it --privileged tatsushid/tinycore:6.4-x86
+docker run -it --privileged tatsushid/tinycore:7.0-x86
 ```
 
 Once it starts with privilege mode, you can run the package manager like

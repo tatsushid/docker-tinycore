@@ -9,8 +9,8 @@ x86/x86\_64 packages
   layout
 - squashfs-tools.tcz: contains a squashfs builder and expander
 
-These original packages are found under http://tinycorelinux.net/6.x/ and
-Dockerfile of these images are found at
+These original packages are found under http://tinycorelinux.net/7.x/ or
+http://tinycorelinux.net/6.x/ and Dockerfile of these images are found at
 
 - [`7.0-x86`, `latest` (7.0/x86/Dockerfile)](https://github.com/tatsushid/docker-tinycore/blob/master/7.0/x86/Dockerfile)
 - [`7.0-x86_64` (7.0/x86\_64/Dockerfile)](https://github.com/tatsushid/docker-tinycore/blob/master/7.0/x86_64/Dockerfile)

@@ -6,9 +6,9 @@ RUN mkdir -p /tmp/tce/optional \
     && chown -R root:staff /tmp/tce \
     && chmod -R g+w /tmp/tce \
     && $(cd etc/sysconfig; ln -s ../../tmp/tce tcedir) \
-    && echo -n > etc/sysconfig/tcuser \
-    && mkdir /home/tc \
-    && chown tc:staff /home/tc
+    && echo -n tc > etc/sysconfig/tcuser \
+    && . /etc/init.d/tc-functions \
+    && setupHome
 
 USER tc
 CMD ["/bin/sh"]

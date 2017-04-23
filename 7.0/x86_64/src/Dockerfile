@@ -1,4 +1,4 @@
-FROM busybox
+FROM alpine
 
 ADD tce-load.patch /tmp/
 RUN wget http://www.tinycorelinux.net/7.x/x86_64/archive/7.0/distribution_files/rootfs64.gz \

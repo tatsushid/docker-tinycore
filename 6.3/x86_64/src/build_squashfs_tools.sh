@@ -1,9 +1,9 @@
 #!/bin/sh
 
-apk add --no-cache squashfs-tools
+apk add --no-cache curl squashfs-tools
 
 if [ ! -f squashfs-tools.tcz ]; then
-    wget http://tinycorelinux.net/6.x/x86_64/tcz/squashfs-tools.tcz
+    curl -SLO http://tinycorelinux.net/6.x/x86_64/tcz/squashfs-tools.tcz
 fi
 
 [ -d /mnt ] || mkdir /mnt

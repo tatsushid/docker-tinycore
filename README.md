@@ -20,7 +20,7 @@ and Dockerfile of these images are found at
 
 - [`9.0-x86`, `latest` (9.0/x86/Dockerfile)](https://github.com/tatsushid/docker-tinycore/blob/master/9.0/x86/Dockerfile)
 - [`9.0-x86_64` (9.0/x86\_64/Dockerfile)](https://github.com/tatsushid/docker-tinycore/blob/master/9.0/x86_64/Dockerfile)
-- [`8.2-x86`, `latest` (8.2/x86/Dockerfile)](https://github.com/tatsushid/docker-tinycore/blob/master/8.2/x86/Dockerfile)
+- [`8.2-x86` (8.2/x86/Dockerfile)](https://github.com/tatsushid/docker-tinycore/blob/master/8.2/x86/Dockerfile)
 - [`8.2-x86_64` (8.2/x86\_64/Dockerfile)](https://github.com/tatsushid/docker-tinycore/blob/master/8.2/x86_64/Dockerfile)
 - [`8.1-x86` (8.1/x86/Dockerfile)](https://github.com/tatsushid/docker-tinycore/blob/master/8.1/x86/Dockerfile)
 - [`8.1-x86_64` (8.1/x86\_64/Dockerfile)](https://github.com/tatsushid/docker-tinycore/blob/master/8.1/x86_64/Dockerfile)

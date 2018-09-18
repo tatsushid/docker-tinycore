@@ -8,6 +8,7 @@ RUN mkdir -p /tmp/tce/optional \
     && $(cd etc/sysconfig; ln -s ../../tmp/tce tcedir) \
     && echo -n tc > etc/sysconfig/tcuser \
     && . /etc/init.d/tc-functions \
+    && ldconfig \
     && setupHome
 
 USER tc

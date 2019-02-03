@@ -1,5 +1,5 @@
 IMAGE_NAME := tinycore
-IMAGE_TAG := 9.0-x86
+IMAGE_TAG := 10.0-x86_64
 TMP_IMAGE_NAME := $(IMAGE_NAME)-tar-builder
 TMP_CONTAINER_NAME := $(IMAGE_NAME)-tar-exporter
 
@@ -7,14 +7,14 @@ TMP_CONTAINER_NAME := $(IMAGE_NAME)-tar-exporter
 
 all: build
 
-build: rootfs.tar.gz
+build: rootfs64.tar.gz
 	docker build -t $(IMAGE_NAME):$(IMAGE_TAG) .
 
-rootfs.tar.gz: squashfs-tools.tar.gz
+rootfs64.tar.gz: squashfs-tools.tar.gz
 	docker build -t $(TMP_IMAGE_NAME) src
 	docker run --name $(TMP_CONTAINER_NAME) $(TMP_IMAGE_NAME)
 	docker wait $(TMP_CONTAINER_NAME)
-	docker cp $(TMP_CONTAINER_NAME):/tmp/rootfs.tar.gz ./
+	docker cp $(TMP_CONTAINER_NAME):/tmp/rootfs64.tar.gz ./
 	docker rm $(TMP_CONTAINER_NAME)
 	docker rmi $(TMP_IMAGE_NAME)
 

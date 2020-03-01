@@ -2,7 +2,7 @@ FROM alpine
 
 ADD tce-load.patch /tmp/
 RUN apk add --no-cache curl \
-    && curl -SLO http://www.tinycorelinux.net/10.x/x86/archive/10.0/distribution_files/rootfs.gz \
+    && curl -SLO http://www.tinycorelinux.net/10.x/x86/release/distribution_files/rootfs.gz \
     && mkdir rootfs \
     && cd rootfs \
     && gzip -dc ../rootfs.gz | cpio -id \

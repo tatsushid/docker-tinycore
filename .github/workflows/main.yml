@@ -1,0 +1,39 @@
+name: docker-tinycore
+
+on:
+  push:
+    branches:
+    - 'main'
+    - 'master'
+    - 'dev'
+    paths-ignore:
+    - '**/README.md'
+  pull_request:
+    branches:
+    - '*'
+  schedule:
+  - cron:  "0 0 * */1 *" # At 00:00 in every month.
+  workflow_dispatch:
+
+jobs:
+  image:
+    name: docker-tinycore
+    runs-on: ubuntu-20.04
+    steps:
+      - name: "📥 Checkout Code"
+        uses: actions/checkout@v2.3.4
+        with:
+          submodules: 'recursive'
+          fetch-depth: 0
+      - name: "🛠️ Docker QEMU"
+        run: make qemu
+      - name: "🛠️ Build"
+        run: make all
+#      - name: "Logging to docker"
+#        run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASS }}
+#      - name: "📤 Upload to hub.docker.com"
+#        run: docker push tinycore --all-tags
+      - name: "🧹 Clean"
+        run: make clean
+
+

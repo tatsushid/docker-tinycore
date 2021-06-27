@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:latest
 
 ADD tce-load.patch /tmp/
 RUN apk add --no-cache curl patch \

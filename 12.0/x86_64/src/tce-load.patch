@@ -1,0 +1,39 @@
+--- tce-load.orig	2020-03-01 03:44:26.000000000 +0000
++++ tce-load	2020-03-01 03:49:22.300332000 +0000
+@@ -81,15 +81,15 @@
+ 
+ copyInstall() {
+ 	[ -d /mnt/test ] || sudo /bin/mkdir -p /mnt/test
+-	sudo /bin/mount $1 /mnt/test -t squashfs -o loop,ro
++	sudo /usr/local/bin/unsquashfs -f -d /mnt/test $1
+ 	if [ "$?" == 0 ]; then
+ 		if [ "$(ls -A /mnt/test)" ]; then
+ 			yes "$FORCE" | sudo /bin/cp -ai /mnt/test/. / 2>/dev/null
+ 			[ -n "`find /mnt/test/ -type d -name modules`" ] && MODULES=TRUE
+ 		fi
+-		sudo /bin/umount -d /mnt/test
++		sudo rm -rf /mnt/test
+ 	fi
+-	[ "$BOOTING" ] || rmdir /mnt/test
++	[ "$BOOTING" ] || [ -d /mnt/test ] && rmdir /mnt/test
+ }
+ 
+ update_system() {
+@@ -269,7 +269,7 @@
+ 		F="${F##*/}"
+ 		app_exists "$F" "." || fetch_app "$F"
+ 		[ -f "$TCEINSTALLED/${F%.*}" ] || install "$F"
+-	done || exit 1 # subshell cannot exit directly
++	done || exit 0 # subshell cannot exit directly
+ fi
+ 
+ if [ "$TARGETSLOCAL" ]; then
+@@ -286,7 +286,7 @@
+ 				abort_to_saved_dir
+ 			fi
+ 		fi
+-	done || exit 1 # subshell cannot exit directly
++	done || exit 0 # subshell cannot exit directly
+ fi
+ 
+ [ "$BOOTING" ] && exit 0

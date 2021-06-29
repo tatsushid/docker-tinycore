@@ -1,7 +1,7 @@
-FROM alpine
+FROM alpine:latest
 
 ADD tce-load.patch /tmp/
-RUN apk add --no-cache curl \
+RUN apk add --no-cache curl patch \
     && curl -SLO http://www.tinycorelinux.net/6.x/x86_64/archive/6.2/distribution_files/rootfs64.gz \
     && mkdir rootfs64 \
     && cd rootfs64 \
